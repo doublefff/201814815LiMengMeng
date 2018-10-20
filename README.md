@@ -26,6 +26,6 @@ date:2018-10-20
 
 Stemmed-20:
 
-Lemmated-50:
+Lemmated-20:
 
  
