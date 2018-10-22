@@ -26,6 +26,6 @@ date:2018-10-20
 
 Stemmed-20:
 
-Lemmated-20:
+10-based KNN Accuary is 0.8417419012214551
 
  
