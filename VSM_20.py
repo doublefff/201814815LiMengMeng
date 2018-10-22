@@ -54,6 +54,12 @@ def preprocessor():
             stemmed = []
             for item in filtered:
                 stemmed.append(stemmer.stem(item))
+
+            # # Lemmatization
+            # lemmatizer = WordNetLemmatizer()
+            # lemmated = []
+            # for item in filtered:
+            #     lemmated.append(lemmatizer.lemmatize(item))
             i+=1
             print(i)
 

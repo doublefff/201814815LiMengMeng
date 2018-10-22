@@ -1,4 +1,4 @@
-import VSM_lemmated_5
+import VSM_stemmed_20
 import math
 import os
 import pandas as pd
@@ -8,7 +8,7 @@ from collections import Counter
 # tf*idf
 def TF_IDF1(df,pp_documents,dictionary):
     vectors=[]
-    if not os.path.exists('data/output/vsm_lemmated-tf-idf1-5.npy'):
+    if not os.path.exists('data/output/vsm_stemmed-tf-idf1-20.npy'):
         i=0
         for doc in pp_documents:
             vector=[]
@@ -30,17 +30,20 @@ def TF_IDF1(df,pp_documents,dictionary):
             i+=1
             print(i)
             vectors.append(vector)
-        np.save('data/output/vsm_lemmated-tf-idf1-5.npy', np.array(vectors))
+        np.save('data/output/vsm_stemmed-tf-idf1-20.npy',np.array(vectors))
     else:
-        vectors = np.load('data/output/vsm_lemmated-tf-idf1-5.npy')
+        vectors=np.load('data/output/vsm_stemmed-tf-idf1-20.npy')
     return vectors
 
 if __name__ == '__main__':
     # 输入数据
-    documents, labels = VSM_lemmated_5.input_data()
+    documents, labels = VSM_stemmed_20.input_data()
     #处理数据
-    post_documents = VSM_lemmated_5.preprocessor()
+    post_documents = VSM_stemmed_20.preprocessor()
     # 生成词典
-    df,pp_documents,dictionary = VSM_lemmated_5.dict_create(post_documents)
+    df,pp_documents,dictionary = VSM_stemmed_20.dict_create(post_documents)
     # tf-idf 获取vector space
     vectors = TF_IDF1(df,pp_documents, dictionary)
+
+
+
