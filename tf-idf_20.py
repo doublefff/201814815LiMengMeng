@@ -1,4 +1,4 @@
-import VSM_stemmed_20
+import VSM_20
 import math
 import os
 import pandas as pd
@@ -37,11 +37,11 @@ def TF_IDF1(df,pp_documents,dictionary):
 
 if __name__ == '__main__':
     # 输入数据
-    documents, labels = VSM_stemmed_20.input_data()
+    documents, labels = VSM_20.input_data()
     #处理数据
-    post_documents = VSM_stemmed_20.preprocessor()
+    post_documents = VSM_20.preprocessor()
     # 生成词典
-    df,pp_documents,dictionary = VSM_stemmed_20.dict_create(post_documents)
+    df,pp_documents,dictionary = VSM_20.dict_create(post_documents)
     # tf-idf 获取vector space
     vectors = TF_IDF1(df,pp_documents, dictionary)
 
