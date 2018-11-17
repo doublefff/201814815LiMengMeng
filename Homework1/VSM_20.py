@@ -84,7 +84,7 @@ def dict_create(post_documents):
         print("Filtering")
         for stemmed in post_documents:
             back = list(filter(lambda token: count[token] >= 20, stemmed))
-            if "" in back:
+            while "" in back:
                 back.remove("")
             j += 1
             print(j)
