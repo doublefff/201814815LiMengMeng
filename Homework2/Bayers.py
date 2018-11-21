@@ -9,8 +9,6 @@ lb_name= ['alt.atheism','comp.graphics', 'comp.os.ms-windows.misc', 'comp.sys.ib
         'sci.med', 'sci.space', 'soc.religion.christian', 'talk.politics.guns', \
         'talk.politics.mideast', 'talk.politics.misc', 'talk.religion.misc']
 
-
-
 def create_count(X_train,y_train,vocabSet):
     matrix=np.zeros((20,10131))
     prob_c_lt=np.zeros(20)
@@ -21,12 +19,10 @@ def create_count(X_train,y_train,vocabSet):
             if x==lb_name[c]:
                 print(i)
                 index_c.append(i)
-
         print(index_c)
         num=len(index_c)
         prob_c=num/18828
         prob_c_lt[c]=prob_c
-
         list_sum=[]
         for i,x in enumerate(X_train):
             if i in index_c:
@@ -37,12 +33,10 @@ def create_count(X_train,y_train,vocabSet):
         print(list_sum)
         print(len(list_sum))
         c_count=Counter(list_sum)
-
         print(c_count)
-
         j=0
-        for voc in vocabSet:
-            print(voc)
+        for voca in vocabSet:
+            voc=voca[0]
             if c_count[voc] !=None:
                 matrix[c,j]=c_count[voc]
             j+=1
@@ -61,23 +55,26 @@ def trainNBO(matrix):
 def testNBO(p_matrix,prob_c_lt,X_test,y_test,vocabSet):
     i=0
     count=0
-    prob_lt=[]
+
     for doc in X_test:
+        prob_lt=[]
         c_true=y_test[i]
         for c in range(20):
+            prob=0
             for item in doc:
                 if item in vocabSet:
                     inx=list(vocabSet).index(item)
-                    if p_matrix[c][inx] !=0:
-                        prob+=math.log(p_matrix[c][inx])
+                    if p_matrix[c][inx] ==0:
+                        p_matrix[c][inx]=1/10131
+                    prob+=math.log(p_matrix[c][inx])
             prob=prob+math.log(prob_c_lt[c])
-        prob_lt.append(prob)
+            prob_lt.append(prob)
         c_predict=prob_lt.index(max(prob_lt))
         i+=1
         if lb_name[c_predict]==c_true:
             count+=1
-            print("正确"+count)
-        print("文档"+i)
+            print("正确"+str(count))
+        print("文档"+str(i))
     accuracy=count/i
 
     return accuracy
