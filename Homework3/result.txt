@@ -1,0 +1,24 @@
+---k-means
+result_NMI: 0.813944963199
+---AffinityPropagation
+result_NMI: 0.631306406795
+---MeanShift
+result_NMI: -1.61329283266e-06
+---spectral_clustering
+result_NMI: 0.776712843212
+---AgglomerativeClustering: ward
+result_NMI: 0.806528009807
+---AgglomerativeClustering: average
+result_NMI: 0.890737994321
+---AgglomerativeClustering: complete
+result_NMI: 0.719131135828
+---DBSCAN
+result_NMI: 0.702058103251
+---GaussianMixture: spherical
+result_NMI: 0.786990779015
+---GaussianMixture: diag
+result_NMI: 0.823534986904
+---GaussianMixture: tied
+result_NMI: 0.789630286436
+---GaussianMixture: full
+result_NMI: 0.74334819448
