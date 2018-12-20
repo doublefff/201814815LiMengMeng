@@ -1,4 +1,4 @@
-实验报告一
+实验一
 -Vector space model
 -KNN
 
