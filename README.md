@@ -2,6 +2,7 @@
 COURSR:Data Mining 
 HOMEWORK AND PROJECT:
 
+
 -Vector space model
 
 date:2018-10-18
@@ -56,7 +57,10 @@ Stemmed-20:
 
 15-based KNN Accuary is 0.8446627721720659
 
- 
+实验二
+
+-Naive Bayes
+
 时间：2018-11-25
 
 实验步骤
