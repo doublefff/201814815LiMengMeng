@@ -1,11 +1,7 @@
 # 201814815LiMengMeng
-COURSR:Data Mining 
-HOMEWORK AND PROJECT:
 
-实验一
-
+## 实验一
 -Vector space model
-
 -KNN
 
 
